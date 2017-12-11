@@ -16,7 +16,7 @@ class Blog extends Component {
   componentDidMount() {
     axios.get('/posts')
       .then(response => {
-        const posts = response.data.slice(0, 8);
+        const posts = response.data.slice(0, 4);
         const updatedPosts = posts.map(post => {
           return {
             ...post,
@@ -59,6 +59,14 @@ class Blog extends Component {
 
     return (
       <div>
+        <header className="Header">
+          <nav>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/new-post">New post</a></li>
+            </ul>
+          </nav>
+        </header>
         <section className="Posts">
           {posts}
         </section>
