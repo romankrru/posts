@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Route, Link } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 import FullPost from '../../components/FullPost/FullPost';
 import NewPost from './NewPost/NewPost';
@@ -14,8 +14,8 @@ class Blog extends Component {
         <header className="Header">
           <nav>
             <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/new-post">New post</Link></li>
+              <li><NavLink exact to="/">Home</NavLink></li>
+              <li><NavLink to="/new-post">New post</NavLink></li>
             </ul>
           </nav>
         </header>

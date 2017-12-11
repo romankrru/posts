@@ -20,7 +20,8 @@
 }
 
 .Header a:hover,
-.Header a:active {
+.Header a:active,
+.Header a.active {
     color: rgb(153, 52, 52);
     text-decoration: underline;
 }
