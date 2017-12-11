@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Switch } from 'react-router-dom';
 
-import FullPost from '../../components/FullPost/FullPost';
+import FullPost from './FullPost/FullPost';
 import NewPost from './NewPost/NewPost';
 import Posts from './Posts/Posts';
 import './Blog.css';
@@ -20,7 +20,10 @@ class Blog extends Component {
           </nav>
         </header>
         <Route path="/" exact component={Posts} />
-        <Route path="/new-post" component={NewPost} />        
+        <Switch>
+          <Route path="/new-post" component={NewPost} />
+          <Route path="/:id" exact component={FullPost} />
+        </Switch>
         {/* <section>
           <FullPost id={this.state.selectedPostId} />
         </section>
